@@ -23,9 +23,9 @@ Create table [Faculties] --Факультеты--
 Create table [Teachers] --Преподаватели--
 (
              [Id] int identity(1, 1) not null primary key, --Идентификатор--
-             [EmploymentDate] date not null check (EmploymentDate >= '1990.01.01'), --Дата трудоустройства--
-             [Name] nvarchar(max) not null check ([Name] <> N'' ), --Имя преподавателя--
-             [Surname] nvarchar(max) not null check ([Surname] <> N'' ), -- Фамилия преподавателя--
-             [Salary] money not null check ([Salary] > 0.0), --Ставка--
-             [Premium] money not null check ([Premium] >= 0.0) default '0' --Надбавка--
+	     [EmploymentDate] date not null check (EmploymentDate >= '1990.01.01'), --Дата трудоустройства--
+	     [Name] nvarchar(max) not null check ([Name] <> N'' ), --Имя преподавателя--
+	     [Premium] money not null check ([Premium] >= 0.0) default '0', --Надбавка--
+	     [Salary] money not null check ([Salary] > 0.0), --Ставка--
+	     [Surname] nvarchar(max) not null check ([Surname] <> N'' ) -- Фамилия преподавателя--	 
 );
