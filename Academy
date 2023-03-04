@@ -3,14 +3,14 @@ Create table [Groups] -- Таблица группы--
              [Id] int identity(1, 1) not null primary key, --Идентификатор--
 	     [Name] nvarchar(10) not null check ([Name] <> N'' ) unique, --Название группы--
 	     [Rating] int not null check (Rating > 0 and Rating < 5), --Рейтинг--
-             [Year] int not null check (Year > 1 and Year < 5) --Курс/Год--
+	     [Year] int not null check (Year > 1 and Year < 5) --Курс/Год--
 );
 
 Create table [Departments] --Кафедры--
 (
              [Id] int identity(1, 1) not null primary key, --Идентификатор--
-	     [Name] nvarchar(100) not null check ([Name] <> N'' ) unique, --Название кафедры--
-	     [Financing] money not null check ([Financing] >=0.0) default '0' --Финансирование--
+	     [Financing] money not null check ([Financing] >=0.0) default '0', --Финансирование--
+	     [Name] nvarchar(100) not null check ([Name] <> N'' ) unique --Название кафедры--
 );
 
 Create table [Faculties] --Факультеты--
@@ -27,5 +27,5 @@ Create table [Teachers] --Преподаватели--
 	     [Name] nvarchar(max) not null check ([Name] <> N'' ), --Имя преподавателя--
 	     [Premium] money not null check ([Premium] >= 0.0) default '0', --Надбавка--
 	     [Salary] money not null check ([Salary] > 0.0), --Ставка--
-	     [Surname] nvarchar(max) not null check ([Surname] <> N'' ) -- Фамилия преподавателя--	 
+	     [Surname] nvarchar(max) not null check ([Surname] <> N'' ) -- Фамилия преподавателя--	 	         
 );
